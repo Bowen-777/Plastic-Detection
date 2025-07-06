@@ -22,6 +22,9 @@ Plastic-Detection
     └── labelme2yolo.py
 ```
 
-### Training data & Evaluation data
+## Dependecies
+- Before training, please use `pip install ultralytics` to install the availble YOLO model.
+
+## Training data & Evaluation data
 - Training data: Data from Fuzhou(福州) are used for training.
 - Evaluation data: Data from Qingdao(青岛) are used for evaluation.
