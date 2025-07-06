@@ -1,6 +1,6 @@
 .vscode/*
 .vscode/
-total_data.zip
+*.zip
 
 data/
 data/*

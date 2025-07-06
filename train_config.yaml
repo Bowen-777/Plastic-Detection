@@ -1,0 +1,22 @@
+# YOLO11 hyperparameters
+
+# Basic model
+model: yolov11s.pt
+
+imgsz: 1227
+batch: 8
+epochs: 50
+
+# optimizer configuration
+optimizer:
+  type: SGD
+  lr0: 0.01
+  momentum: 0.937
+  weight_decay: 0.0005
+
+# Early stop
+patience: 30
+
+project: runs
+name: plastic_detection
+exist_ok: False

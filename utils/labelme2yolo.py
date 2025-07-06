@@ -2,12 +2,17 @@ import json
 import os
 
 # hyperparameters
+data_mode = 'val' # ['train', 'val', 'test']
 img_w, img_h = [1227, 1227]
 labels = ['UW', 'CW', 'DW', 'AW']
 
 # The dictionary between label and id
 label2id = {label: i for i, label in enumerate(labels)}
 id2label = {i : label for label, i in label2id.items()}
+
+# Get the path of the current dir
+current_file_path = os.path.abspath(__file__)
+current_dir = os.path.dirname(current_file_path)
 
 def labelme_to_yolo(json_path, output_dir):
     with open(json_path, "r", encoding='utf-8') as f:
@@ -41,9 +46,17 @@ def labelme_to_yolo(json_path, output_dir):
     with open(txt_path, 'w') as f:
         f.write('\n'.join(label_lines))
 
+# All three modes
+if data_mode == 'train':
+    json_dir = current_dir + "/../data/train"
+    output_dir = current_dir + "/../label/train"
+elif data_mode == 'val':
+    json_dir = current_dir + "/../data/val"
+    output_dir = current_dir + "/../label/val"
+elif data_mode == 'test':
+    json_dir = current_dir + "/../data/test"
+    output_dir = current_dir + "/../label/test"
 
-json_dir = "../data/train"
-output_dir = "../label/train"
 os.makedirs(output_dir, exist_ok=True)
 
 for file in os.listdir(json_dir):

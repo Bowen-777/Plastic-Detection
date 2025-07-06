@@ -1,0 +1,5 @@
+train: ./data/train
+val: ./data/val
+
+label_number: 4
+labels: ['UW', 'CW', 'DW', 'AW']
