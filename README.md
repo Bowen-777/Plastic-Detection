@@ -2,7 +2,7 @@
 The training code for plastic detection
 
 ## Project Structure
-The project structure are 
+The project structure is
 ```
 Plastic-Detection
 ├── README.md
@@ -23,7 +23,7 @@ Plastic-Detection
 ```
 
 ## Dependecies
-- Before training, please use `pip install ultralytics` to install the availble YOLO model.
+- Before training, please use `pip install ultralytics` to install the available YOLO model.
 
 ## Training data & Evaluation data
 - Training data: Data from Fuzhou(福州) are used for training.
